@@ -1,0 +1,410 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Visual Basic - Bordes en Excel</title>
+	
+<meta name="title" content="Visual Basic - Bordes en Excel">
+<meta name="description" content="como puedo hacer desde visual para colocar un determinado borde a una celda de excel??, ya logro exportar todos los datos,y logro hacer que le coloque un borde ">
+<meta name="keywords" content="visual basic, visual, basic, bordes, excel, foro">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	
+	<meta name="robots" content="index, follow">
+	<meta name="content-language" content="es">
+
+		<link href="884532-Bordes_en_Excel%20Archivos/css.css" type="text/css" rel="stylesheet">
+	<script async="" src="884532-Bordes_en_Excel%20Archivos/cbgapi.loaded_2"></script><script async="" src="884532-Bordes_en_Excel%20Archivos/cbgapi.loaded_1"></script><script src="884532-Bordes_en_Excel%20Archivos/beacon.js" async=""></script><script gapi_processed="true" src="884532-Bordes_en_Excel%20Archivos/plusone.js" async="" type="text/javascript"></script><script async="" src="884532-Bordes_en_Excel%20Archivos/cbgapi.loaded_0"></script><script type="text/javascript" src="884532-Bordes_en_Excel%20Archivos/js.js"></script>
+	
+	<script gapi_processed="true" type="text/javascript" src="884532-Bordes_en_Excel%20Archivos/plusone.js"></script>
+		
+	<link rel="alternate" href="http://www.lawebdelprogramador.com/feed/foro_Visual_Basic.xml" type="application/rss+xml" title="LWP - Foro: Visual Basic"></head>
+
+<body alink="#494965" link="#494965" vlink="#494965">
+
+<div class="wrapper_full greyDark">
+	<div class="wrapper header_logo">
+		<div class="left f_write bold">Publicidad</div>
+		
+<div class="right"><script type="text/javascript"><!--
+		google_ad_client = "ca-pub-5586981122800176";
+		/* 728x90, creado 19/05/08 */
+		google_ad_slot = "4370038693";
+		google_ad_width = 728;
+		google_ad_height = 90;
+		//-->
+		</script>
+		<script type="text/javascript" src="884532-Bordes_en_Excel%20Archivos/show_ads.js">
+		</script><ins style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins></div>
+	</div>
+</div>
+<div class="wrapper_full blueLight" style="position:relative">
+	<div class="wrapper">
+		<div class="wrapper_logo">
+			<div><a href="http://www.lawebdelprogramador.com/" class="logolwp"></a></div>
+			<div class="logoText">Comunidad de Programadores</div>
+		</div>
+	</div>
+	<div class="wrapper header_menu1">
+					<form class="loginForm" action="/programadores/validate.php" method="POST" onsubmit="return validateForm_programmersLogin()" id="loginForm">
+								<div class="left">
+					<input id="loginMail" name="m" value="Correo" type="text">
+				</div>
+				<div class="left">
+					<input id="loginPas" name="p" onfocus="if(this.value=='Contraseña'){this.value=''; this.setAttribute('type', 'password');}" onblur="if(this.value==''){this.value='Contraseña'; this.setAttribute('type', 'text');}" value="Contraseña">
+				</div>
+				<div class="loginButtonImg">
+					<input id="btn_login" value="" type="submit">
+				</div>
+				<div class="loginButtonImg">
+					<a href="http://www.lawebdelprogramador.com/programadores/agregar.php" class="img newUser"><img src="884532-Bordes_en_Excel%20Archivos/img.png" alt="Crear cuenta" title="Crear cuenta"></a>
+				</div>
+				<div class="loginButtonImg">
+					<a href="http://www.lawebdelprogramador.com/programadores/recordar.php" class="img rememberPas"><img src="884532-Bordes_en_Excel%20Archivos/img.png" alt="Recordar contraseña" title="Recordar contraseña"></a>
+				</div>
+				<div class="newBlock">
+					<span style="float:left;padding-top:1px;"><input name="rememberU" style="width:12px;height:12px;margin:0;padding:0px;" type="checkbox"></span><span style="float:left;padding:1px 0 0 3px;font-weight:bold;">Recordar contraseña en este navegador</span>
+				</div>
+			</form>
+				</div>
+	<div class="wrapper header_menu2">
+				<div id="menu1">
+			<ul>
+				<li><a href="http://www.lawebdelprogramador.com/" class="">Inicio</a>
+				</li><li><a href="javascript:void(0);" class="">Información</a>
+					<ul>
+						<li><a href="http://www.lawebdelprogramador.com/cursos/" class="">Cursos y Manuales</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/temas/" class="">Biblioteca de Temas</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/codigo/" class="">Código Fuente</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/noticias/" class="">Noticias/Artículos</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/diccionario/" class="">Diccionario</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/encuestas.php" class="">Encuestas/Estadísticas</a></li>
+					</ul>
+				</li>
+				<li><a href="javascript:void(0);" class="mselect">Servicios</a>
+					<ul>
+						<li><a href="http://www.lawebdelprogramador.com/foros/" class="oselect">Foros de Consulta</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/preguntas/" class="">Preguntas/Respuestas</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/tablon/" class="">Tablón de Notas</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/icocur.php" class="">Iconos y Cursores</a></li>
+					</ul>
+				</li>
+				<li><a href="javascript:void(0);" class="">Programadores</a>
+					<ul>
+						<li><a href="http://www.lawebdelprogramador.com/programadores/" class="">Programadores</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/trabajo/" class="">Ofertas de Trabajo</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/lista.php" class="">Lista de Correo</a></li>
+					</ul>
+				</li>
+				<li><a href="javascript:void(0);" class="">Programas</a>
+					<ul>
+						<li><a href="http://www.lawebdelprogramador.com/programas/" class="">Programas/Utilidades</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/nprogramas/" class="">Nuestros Programas</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/sp/" class="">Solicitudes</a></li>
+					</ul>
+				</li>
+				<li><a href="javascript:void(0);" class="">Otros</a>
+					<ul style="right:0px;">
+						<li><a href="http://www.lawebdelprogramador.com/colaboradores.php" class="">Colaboradores</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/contactar.php" class="">Contactar</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="wrapper breadcrumbs_block ">
+	<div class="breadcrumbs"><a href="http://www.lawebdelprogramador.com/index.php" class="breadcrumbsL">LWP</a> » <a href="http://www.lawebdelprogramador.com/foros/index.php" class="breadcrumbsL">Foros</a> » <a href="http://www.lawebdelprogramador.com/foros/Visual_Basic/index1.html" class="breadcrumbsL">Visual Basic</a> » Bordes en Excel</div>
+</div>
+
+<div class="wrapper">
+	<div class="left">
+<div class="left"><script type="text/javascript"><!--
+		google_ad_client = 'ca-pub-5586981122800176';
+		/* 728x15, creado 5/05/11 */
+		google_ad_slot = '7805370279';
+		google_ad_width = 728;
+		google_ad_height = 15;
+		//-->
+		</script>
+		<script type="text/javascript" src="884532-Bordes_en_Excel%20Archivos/show_ads.js">
+		</script><ins style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px"><ins id="aswift_1_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:728px"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" frameborder="0" height="15" scrolling="no" width="728"></iframe></ins></ins></div>
+</div>
+	<div class="header_date right">
+		<script type="text/javascript">
+		<!--
+		document.write(Fecha());
+		// -->
+		</script>Lunes, 23 de septiembre de 2013
+	</div>
+</div>
+<!--fin cabecera-->
+<table class="body" cellpadding="0" cellspacing="0">
+	<tbody><tr>
+		<td class="body_center" valign="top">
+						<div class="headerH1"></div>
+			<h1>Visual Basic - Bordes en Excel</h1>
+			<div class="lineH1"></div>
+			<div style="text-align:center;padding:5px 0px;"><a href="http://velneo.es/de-visual-basic-a-velneo-v7/" target="_blank"><img src="884532-Bordes_en_Excel%20Archivos/velneo468x60_2.gif" alt="Life is soft - evento anual de software empresarial" title="Life is soft - evento anual de software empresarial" border="0"></a></div><div class="headerList"><div class="headerList_search"><form action="/foros/buscar.php" method="get"><input name="opc" value="1" type="hidden"><input name="id" value="93" type="hidden"><input name="charSearch" size="20" class="formulario" type="text"><span class="headerList_searchButton"><input value="Buscar" class="button" type="submit"></span></form></div><div class="headerList_buttonRight"><a href="http://www.lawebdelprogramador.com/foros/Visual_Basic/index173.html" class="btnOption">Volver</a></div><div class="headerList_buttonRight"><a href="http://www.lawebdelprogramador.com/foros/agregar.php?id=93" class="btnOption">Agregar Nota</a></div></div><div class="page"><div class="pageTopRight"><a href="http://www.lawebdelprogramador.com/foros/Visual_Basic/884548-No_veo_el_error.html" class="pageOk">&lt;&lt;</a><a href="http://www.lawebdelprogramador.com/foros/Visual_Basic/884490-Ayuda_con_cadenas_de_texto.html" class="pageOk">&gt;&gt;</a></div></div><a name="s"></a><div id="optionsMessage"><div class="filtered"></div><div class="right">&nbsp;<a href="http://www.lawebdelprogramador.com/foros/imprimir.php?id=884532" target="_blank">
+				<span class="img print"><img src="884532-Bordes_en_Excel%20Archivos/img.png" alt="Imprimir" title="Imprimir"></span>
+			</a><a href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.lawebdelprogramador.com%2Fforos%2FVisual_Basic%2F884532-Bordes_en_Excel.html&amp;t=Bordes_en_Excel.html" target="blank">
+				<span class="img facebook"><img src="884532-Bordes_en_Excel%20Archivos/img.png" title="Compartir en Facebook" alt="facebook"></span>
+			</a><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 24px; height: 15px;"><iframe title="+1" data-gapiattached="true" src="884532-Bordes_en_Excel%20Archivos/fastbutton.htm" name="I0_1379973402909" id="I0_1379973402909" vspace="0" tabindex="0" style="position: static; top: 0px; width: 24px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 15px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div><a href="http://twitter.com/intent/tweet?status=En+@lwp_+%23Visual_Basic+http://www.lawebdelprogramador.com/foros/Visual_Basic/884532-Bordes_en_Excel.html" title="Compartir a Twitter" class="icon-twitter" target="blank">
+			<span class="img twitter"><img src="884532-Bordes_en_Excel%20Archivos/img.png" title="Compartir en Twitter" alt="twitter"></span>
+		</a></div><div class="right"><form action="/foros/Visual_Basic/884532-Bordes_en_Excel.html" method="post"><input name="id" value="884532" type="hidden">Vista: <select name="view" class="formulario" onchange="javascript:form.submit();"><option value="1" selected="selected">arbol</option><option value="2">cronológico</option></select></form></div></div><div class="forosDetailBox"><div class="forosList"><a href="#i884532" onclick="selectNew(884532);"><div class="forosListRow rellover " style="margin-top:5px;"><div class="left"><span class="img ico_previousRed"><img src="884532-Bordes_en_Excel%20Archivos/img.png" alt="Mensajes realizados anteriormente (No estaban la última vez que entraste)" align="middle"></span></div><div class="left"><span class="title f_blueDark">Bordes en Excel</span><br><span class="forosListUser">tony&nbsp;(15/10/2007 17:15:38)</span></div><div class="forosListNumberView" style="text-align:right;">3.990 visitas<br>1 respuesta</div></div></a></div><div class="forosList"><a href="#i1333877" onclick="selectNew(1333877);"><div class="forosListRow rellover lastMessage"><div class="left img ico_bulletGrey" style="margin-left:15px;"><img src="884532-Bordes_en_Excel%20Archivos/img.png" alt="" align="middle"></div><div class="left"><span class="title f_blueDark">Bordes en Excel</span><br><span class="forosListUser">Will&nbsp;(24/05/2012 18:43:35)</span></div></div></a></div></div>					<script type="text/javascript">
+						<!--
+						ids.push(884532);
+						-->
+					</script>
+					<a name="i884532"></a><div class="forosMessage" id="div884532"><div style="padding:5px 0px 0px 0px;"><div><table class="forosRow" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td rowspan="6" class="forosVotar borderRadius"><span class="img votaUp"><img src="884532-Bordes_en_Excel%20Archivos/img.png" alt="Me gusta: Está pregunta es útil y esta clara" title="Me gusta: Está pregunta es útil y esta clara"></span>
+							<div class="forosVotarValue" id="v884532">0</div>
+							<span class="img votaDown"><img src="884532-Bordes_en_Excel%20Archivos/img.png" alt="No me gusta: Está pregunta no esta clara o no es útil" title="NO me gusta: Está pregunta no esta clara o no es útil"></span></td></tr><tr><td rowspan="5">&nbsp;</td></tr><tr><td class="list_title">Asunto:</td><td class="list_contentBold" id="idT884532" width="100%">Bordes en Excel</td></tr><tr><td class="list_title">Autor:</td><td class="list_content" width="100%"><span class="left">tony</span>&nbsp;(<a href="http://www.lawebdelprogramador.com/foros/intervenciones.php?id=884532" class="link3">2 intervenciones</a>)</td></tr><tr><td class="list_title">Fecha:</td><td class="list_content" width="100%">15/10/2007 17:15:38</td></tr></tbody></table><div class="list_description" style="width:653px;margin:0px 0px 5px 0px;">como
+ puedo hacer desde visual para colocar un determinado borde a una celda 
+de excel??, ya logro exportar todos los datos,y logro hacer que le 
+coloque un borde a una celda pero le coloca el borde completo,solo 
+quiero que me haga un borde punteado sobre el borde inferior de una 
+celda
+<br>
+<br>tengo este codigo para el borde pero me coloca el borde completo y solo quiero el borde inferior punteado
+<br>
+<br>ApExcel.Cells(7,1).Bordes.LineStyle=2
+<br>
+<br>he visto algo parecido a este pero me da error al colocarlo
+<br>
+<br>ApExcel.Cells(7,1).Bordes(xlDiagonalUp).LineStyle=xlNone
+<br>
+<br>me falta algo?? estoy haciendo algo mal??
+<br>
+<br>ApExcel lo declare como New Excel.Application
+<br>
+<br>y hice la llamada a la debida referencia de excel
+<br>
+<br>Gracias por su ayuda</div></div></div>
+<div class="publi format468x15"><script type="text/javascript"><!--
+		google_ad_client = "ca-pub-5586981122800176";
+		/* 468x15_enlaces */
+		google_ad_slot = "4373498270";
+		google_ad_width = 468;
+		google_ad_height = 15;
+		//-->
+		</script>
+		<script type="text/javascript" src="884532-Bordes_en_Excel%20Archivos/show_ads.js">
+		</script><ins style="display:inline-table;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><ins id="aswift_2_anchor" style="display:block;border:none;height:15px;margin:0;padding:0;position:relative;visibility:visible;width:468px"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" frameborder="0" height="15" scrolling="no" width="468"></iframe></ins></ins></div>
+<div class="forosBtnComment"><span class="button" onclick="javascript:showForm(884532, 'foros')">Responder</span><a href="#s">
+								<span class="img up"><img src="884532-Bordes_en_Excel%20Archivos/img.png" alt="Subir" title="Subir"></span>
+							</a></div><div class="publi_otherSections">También te puede interesar...<div style="padding-left:10px;">- <a href="http://www.lawebdelprogramador.com/cursos/Visual_Basic/index1.html" class="link2">Cursos de Visual Basic</a><br>- <a href="http://www.lawebdelprogramador.com/temas/Visual_Basic/index1.html" class="link2">Temas de Visual Basic</a><br>- <a href="http://www.lawebdelprogramador.com/codigo/Visual_Basic/index1.html" class="link2">Código fuente de Visual Basic</a><br></div></div><div id="idshowForm_884532" class="forosForm"></div></div>					<script type="text/javascript">
+						<!--
+						ids.push(1333877);
+						-->
+					</script>
+					<a name="last"></a><a name="i1333877"></a><div class="forosMessage" id="div1333877" style="background-color:#c3e3bb"><div style="padding:5px 0px 0px 10px;"><div><table class="forosRow" border="0" cellpadding="0" cellspacing="0" width="100%"><tbody><tr><td rowspan="6" class="forosVotar borderRadius"><span class="img votaUp"><img src="884532-Bordes_en_Excel%20Archivos/img.png" alt="Me gusta: Está respuesta es útil y esta clara" title="Me gusta: Está respuesta es útil y esta clara"></span>
+							<div class="forosVotarValue" id="v1333877">0</div>
+							<span class="img votaDown"><img src="884532-Bordes_en_Excel%20Archivos/img.png" alt="No me gusta: Está respuesta no esta clara o no es útil" title="NO me gusta: Está respuesta no esta clara o no es útil"></span></td></tr><tr><td rowspan="5">&nbsp;</td></tr><tr><td class="list_title">Asunto:</td><td class="list_contentBold" id="idT1333877" width="100%">Bordes en Excel</td></tr><tr><td class="list_title">Autor:</td><td class="list_content" width="100%"><span class="left">Will</span>&nbsp;(1 intervención)</td></tr><tr><td class="list_title">Fecha:</td><td class="list_content" width="100%">24/05/2012 18:43:35</td></tr></tbody></table><div class="list_description" style="width:643px;margin:0px 0px 5px 0px;">Puedes
+ utilizar el siguiente código que esta escrito en C# utilizando el 
+objeto Microsoft Excel 14.0 Object Library como referencia agregada.<br>
+<br>
+private string ExportarBitacora()<br>
+{<br>
+    //ABRIMOS UNA INSTANCIA DE MICROSOFT EXCEL<br>
+    Excel.ApplicationClass excel = new Excel.ApplicationClass();<br>
+    <br>
+    //CREAMOS UN NUEVO LIBRO<br>
+    Excel._Workbook oWB = (Excel._Workbook)(excel.Workbooks.Add(Missing.Value));<br>
+<br>
+    //AL CREAR EL LIBRO EN EXCEL SE AGREGAN AUTOMATICAMENTE 3 HOJAS. 
+DEBIDO A QUE EL LIBRO DEBE CONTENER AL MENOS UNA HOJA SOLO PUEDO 
+ELIMINAR<br>
+    //LAS DOS PRIMERAS HOJAS. AL ELIMINAR UNA HOJA SE VA RE-AJUSTANDO EL ARREGLO POR ESO SIEMPRE ELIMINO EL INDICE 1<br>
+    ((Excel._Worksheet)oWB.Sheets[1]).Delete();<br>
+    ((Excel._Worksheet)oWB.Sheets[1]).Delete();<br>
+<br>
+    //COMO ME QUEDO SIEMPRE CON UNA HOJA, LA ASIGNO A MI PRIMER OBJETO HOJA CON EL QUE VOY A TRABAJAR Y LE DOY UN NOMBRE<br>
+    Excel._Worksheet oSheetBitIni = (Excel._Worksheet)oWB.Sheets[1];<br>
+    oSheetBitIni.Name = "Bitacora de Inicio"; //EL NOMBRE DE LA HOJA NO DEBE SOBREPASAR LOS 31 CARACTERES<br>
+<br>
+    //COMO AGREGAR UNA NUEVA HOJA<br>
+    //Microsoft.Office.Interop.Excel._Worksheet oSheet2 = 
+(Microsoft.Office.Interop.Excel._Worksheet)oWB.Sheets.Add(Missing.Value,
+ Missing.Value, Missing.Value, Missing.Value);<br>
+<br>
+    oSheetBitIni.Cells[2, 13] = "FECHA:";<br>
+<br>
+// AQUI SE APLICA EL BORDE INFERIOR:<br>
+    oSheetBitIni.get_Range("N2", 
+"N2").Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = 
+Excel.XlLineStyle.xlContinuous; //Borde inferior en una celda<br>
+}<br>
+<br>
+NOTA: Si estas usando Visual Basic creo que debes reemplazar los corchetes de la propiedad "Borders"  por parentesis.<br>
+Ej:  .Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle<br>
+<br>
+Otros datos interesantes para formateo de datos y celdas en Excel desde C#:<br>
+<br>
+oSheetBitIni.Cells[2, 3] = "BITACORA DIARIA INSPECCION INICIO JORNADA";<br>
+oSheetBitIni.get_Range("C2", "C2").RowHeight = 25.5; //Alto de fila<br>
+oSheetBitIni.get_Range("A11", "A11").ColumnWidth = 6.57; //Ancho de la columna <br>
+oSheetBitIni.get_Range("A1", "N1").Interior.ColorIndex = 16; //Color de fondo (1-255 colores)<br>
+oSheetBitIni.get_Range("A1", "N1").Interior.Color = Color.FromArgb(255, 255, 255); //Color de fondo (millones de colores)<br>
+oSheetBitIni.get_Range("K3", "K3").Font.ColorIndex = 7; //Color de fuente (1-255 colores)<br>
+oSheetBitIni.get_Range("K3", "K3").Font.Color = Color.FromArgb(128, 128, 128); //Color de fuente (millones de colores)<br>
+oSheetBitIni.get_Range("C2", "C2").Font.Name = "Tahoma"; //Tipo de fuente<br>
+oSheetBitIni.get_Range("C2", "C2").Font.Size = 20; //Tamaño de fuente<br>
+oSheetBitIni.get_Range("C2", "C2").Font.Bold = true; //EN NEGRITAS<br>
+oSheetBitIni.get_Range("A11", "N11").WrapText = true; //El texto se ajusta al tamaño de la celda<br>
+oSheetBitIni.get_Range("A11", "N11").HorizontalAlignment = Excel.XlHAlign.xlHAlignCenter;//Alineación horizontal<br>
+oSheetBitIni.get_Range("A11", "N11").VerticalAlignment = Excel.XlHAlign.xlHAlignCenter;//Alineación horizontal<br>
+oSheetBitIni.get_Range("A5", "N5").MergeCells = true; //COMBINAR LAS CELDAS<br>
+oSheetBitIni.get_Range("C3", 
+"C3").Borders[Excel.XlBordersIndex.xlEdgeBottom].LineStyle = 
+Excel.XlLineStyle.xlContinuous; //Borde inferior en una celda<br>
+oSheetBitIni.get_Range("C3", 
+"C3").Borders[Excel.XlBordersIndex.xlEdgeTop].LineStyle = 
+Excel.XlLineStyle.xlContinuous; //Borde superior en una celda<br>
+oSheetBitIni.get_Range("C3", 
+"C3").Borders[Excel.XlBordersIndex.xlEdgeLeft].LineStyle = 
+Excel.XlLineStyle.xlContinuous; //Borde izquierdo en una celda<br>
+oSheetBitIni.get_Range("C3", 
+"C3").Borders[Excel.XlBordersIndex.xlEdgeRight].LineStyle = 
+Excel.XlLineStyle.xlContinuous; //Borde derecho en una celda<br>
+<br>
+oSheetBitIni.get_Range("K5", 
+"L9").BorderAround(Excel.XlLineStyle.xlContinuous, 
+Excel.XlBorderWeight.xlMedium, Excel.XlColorIndex.xlColorIndexAutomatic,
+ Excel.XlColorIndex.xlColorIndexAutomatic); //BORDE COMPLETO (todo el 
+contorno de la celda)<br>
+<br>
+FUENTES:<br>
+http://www.functionx.com/vbaexcel/cells/Lesson5.htm<br>
+http://www.functionx.com/vbaexcel/cells/Lesson4.htm<br>
+<br>
+Para cada lenguaje solo hay que adaptar el código. Esto esta escrito en C#.<br>
+Espero que te de una buena idea de como se soluciona tu problema.<br>
+Salu2 desde Celaya, gto., Mex.</div></div></div><div class="forosBtnComment"><span class="button" onclick="javascript:showForm(1333877, 'foros')">Comentar</span><a href="#s">
+								<span class="img up"><img src="884532-Bordes_en_Excel%20Archivos/img.png" alt="Subir" title="Subir"></span>
+							</a></div><div id="idshowForm_1333877" class="forosForm"></div></div>
+<div id="paginacion"><div class="row"><div class="prev" onclick="window.location='/foros/Visual_Basic/884548-No_veo_el_error.html'"><div class="link"><div class="arrow"></div><div class="text link3">No veo el error</div></div></div><div style="display:table-cell;width:1px;"></div><div class="next" onclick="window.location='/foros/Visual_Basic/884490-Ayuda_con_cadenas_de_texto.html'"><div class="link"><div class="text link3">Ayuda con cadenas de texto</div><div class="arrow"></div></div></div></div></div>
+
+<div class="publi_belowForms"><script type="text/javascript"><!--
+		google_ad_client = "ca-pub-5586981122800176";
+		/* 300x250_belowForms */
+		google_ad_slot = "6885113870";
+		google_ad_width = 300;
+		google_ad_height = 250;
+		//-->
+		</script>
+		<script type="text/javascript" src="884532-Bordes_en_Excel%20Archivos/show_ads.js">
+		</script><ins style="display:inline-table;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><ins id="aswift_3_anchor" style="display:block;border:none;height:250px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){w.location.replace(h)}}" id="aswift_3" name="aswift_3" style="left:0;position:absolute;top:0;" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins></div>
+<div id="forosVote" class="borderRadius"></div>		</td>
+
+		<td class="body_right" valign="top">
+			
+<div class="content_right publi_robapaginas"><script type="text/javascript"><!--
+		google_ad_client = "ca-pub-5586981122800176";
+		/* 300x600 */
+		google_ad_slot = "7186922279";
+		google_ad_width = 300;
+		google_ad_height = 600;
+		//-->
+		</script>
+		<script type="text/javascript" src="884532-Bordes_en_Excel%20Archivos/show_ads.js">
+		</script><ins style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><ins id="aswift_4_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:300px"><iframe marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){w.location.replace(h)}}" id="aswift_4" name="aswift_4" style="left:0;position:absolute;top:0;" frameborder="0" height="600" scrolling="no" width="300"></iframe></ins></ins></div>
+				<div class="menu content_right">
+					<ul style="margin:0px;padding:0px;">
+						<li class="menu_title">Otras secciones relacionadas con Visual Basic</li>
+						<li class="menu_link"><a href="http://www.lawebdelprogramador.com/cursos/Visual_Basic/index1.html">Cursos</a></li><li class="menu_link"><a href="http://www.lawebdelprogramador.com/temas/Visual_Basic/index1.html">Biblioteca de Temas</a></li><li class="menu_link"><a href="http://www.lawebdelprogramador.com/codigo/Visual_Basic/index1.html">Código Fuente</a></li><li class="menu_link"><a href="http://www.lawebdelprogramador.com/preguntas/listacontestadas.php?id=93&amp;texto=Visual+Basic">Preguntas</a></li>					</ul>
+				</div>
+				<div class="menu content_right"><ul style="margin:0px;padding:0px;"><li class="menu_title">General</li><li class="menu_link"><a href="http://www.lawebdelprogramador.com/feed/foro_Visual_Basic.xml"><span class="img rss"><img src="884532-Bordes_en_Excel%20Archivos/img.png" alt="RSS del foro"></span> RSS del foro</a></li><li class="menu_link"><a href="http://www.lawebdelprogramador.com/foros/expertos.php?id=93">Expertos</a></li><li class="menu_link"><a href="http://www.lawebdelprogramador.com/foros/participacion.php?id=93">Tus mensajes</a></li><li class="menu_link_last"><a href="http://www.lawebdelprogramador.com/recomendar.php?a=4">Recomendar</a></li></ul></div>		</td>
+	</tr>
+</tbody></table>
+
+<iframe name="iPrintDocument" id="iPrintDocument" src="" frameborder="0" height="0" scrolling="no" width="0"></iframe>
+
+<script type="text/javascript">
+	<!--
+	timeleftUpd();
+	-->
+</script>
+
+	<div class="footer-wrapper grey">
+		<div class="wrapper sitemap">
+			<div class="left">
+									<iframe src="884532-Bordes_en_Excel%20Archivos/likebox.htm" style="border:none; overflow:hidden; width:300px; height:258px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe>
+								</div>
+			<div class="left l20">
+				<div id="___plus_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: none repeat scroll 0% 0% transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 300px; height: 131px;"><iframe title="Google+ Badge" data-gapiattached="true" allowtransparency="true" src="884532-Bordes_en_Excel%20Archivos/badge.htm" name="I1_1379973402928" id="I1_1379973402928" vspace="0" tabindex="0" style="position: static; top: 0px; width: 300px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 131px;" marginwidth="0" marginheight="0" hspace="0" frameborder="0" scrolling="no" width="100%"></iframe></div><br>				<div class="menu-sitemap">
+					<ul>
+						<li class="title">Información</li>
+						<li><a href="http://www.lawebdelprogramador.com/cursos/">Cursos y Manuales</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/temas/">Biblioteca de Temas</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/codigo/">Código Fuente</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/diccionario/">Diccionario</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/noticias/">Noticias/Artículos</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/encuestas.php">Encuestas/Estadísticas</a></li>
+					</ul>
+					<ul>
+						<li class="title">Servicios</li>
+						<li><a href="http://www.lawebdelprogramador.com/foros/">Foros de Consulta</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/preguntas/">Preguntas/Respuestas</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/tablon/">Tablón de Notas</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/icocur.php">Iconos y Cursores</a></li>
+					</ul>
+					<ul>
+						<li class="title">Programadores</li>
+						<li><a href="http://www.lawebdelprogramador.com/programadores/">Programadores</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/trabajo/">Ofertas de Trabajo</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/lista.php">Lista de Correo</a></li>
+					</ul>
+					<ul>
+						<li class="title">Programas</li>
+						<li><a href="http://www.lawebdelprogramador.com/programas/">Programas/Utilidades</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/nprogramas/">Nuestros Programas</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/sp/">Solicitudes</a></li>
+					</ul>
+					<ul>
+						<li class="title">Otros</li>
+						<li><a href="http://www.lawebdelprogramador.com/colaboradores.php">Colaboradores</a></li>
+						<li><a href="http://www.lawebdelprogramador.com/contactar.php">Contactar</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="copyright">Copyright © 2000-2013 Interactive Programmers Community - Todos los derechos reservados</div>
+	</div>
+		<!--urchin-->
+	<script src="884532-Bordes_en_Excel%20Archivos/urchin.js" type="text/javascript">
+	</script>
+	<script type="text/javascript">
+	_uacct = "UA-2166074-1";
+	urchinTracker();
+	</script>
+	<!--fin urchin-->
+
+	<!-- Inserta esta etiqueta despuÃ©s de la Ãºltima etiqueta de BotÃ³n +1. -->
+	<script type="text/javascript">
+	window.___gcfg = {lang: 'es'};
+
+	(function() {
+		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		po.src = 'https://apis.google.com/js/plusone.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+	})();
+	</script>
+	<!--fin +1-->
+	
+	<!-- Begin comScore Tag -->
+	<script>
+	var _comscore = _comscore || [];
+	_comscore.push({ c1: "2", c2: "13280783" });
+	(function() {
+	var s = document.createElement("script"), el = document.getElementsByTagName("script")[0]; s.async = true;
+	s.src = (document.location.protocol == "https:" ? "https://sb" : "http://b") + ".scorecardresearch.com/beacon.js";
+	el.parentNode.insertBefore(s, el);
+	})();
+	</script>
+	<noscript>
+	<img src="http://b.scorecardresearch.com/p?c1=2&c2=13280783&cv=2.0&cj=1" />
+	</noscript>
+	<!-- End comScore Tag -->
+	
+
+<iframe style="width: 1px; height: 1px; position: absolute; top: -100px;" src="884532-Bordes_en_Excel%20Archivos/postmessageRelay.htm" id="oauth2relay1933486310" name="oauth2relay1933486310"></iframe></body></html>

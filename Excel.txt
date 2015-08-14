@@ -1,0 +1,58 @@
+ESTRUCTURA BASICA: ***********************************************************************
+
+Imports Microsoft.Office.Interop.Excel
+
+Public Class Form1
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
+        Dim Excel As Object
+        Dim Libro As Object
+        Dim Hoja As Object
+
+        Excel = CreateObject("Excel.Application")
+        Libro = Excel.Workbooks.Add
+        Hoja = Libro.Worksheets(1)
+
+        'Hoja.Range("A1").EntireColumn.ColumnWidth = 100 '>> Ancho de columna
+        Hoja.Range("A3").Value = "Hola"
+
+
+        Excel.Visible = True
+        Excel.UserControl = True
+        Libro.SaveAs("C:\Temp\Prueba.xlsx")
+
+    End Sub
+End Class
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\
+
+BIBLIOTECA DE FUNCIONES:
+
+Hoja.Range("A1").Value = "Hola"         		'>> Agregar informacion a un campo
+Hoja.Range("A1") = "Otra forma"				'>> Agregar informacion a un campo
+Hoja.Cells(1, 1) = "Hola"				'>> Agregar informacion a un campo Formato (i,i)
+Hoja.Range("A1").EntireColumn.ColumnWidth = 100 	'>> Ancho de columna
+Hoja.Range("A1").ColumnWidth = 100			'>> Ancho de columna
+Hoja.Range("A1").Font.Bold = True			'>> Negrita
+Hoja.Range("A1").Font.Size = 15				'>> Tamaño de fuente
+Hoja.Range("A1:D1").Merge()				'>> Combinar celdas
+Hoja.Range("A1:d2").Font.Italic = True			'>> Cursiva
+Hoja.Range("A1").Font.Color = RGB(0, 0, 255)		'>> Color de Fuente
+Hoja.Range("A1").Font.Name = "Tahoma"			'>> Tipo de Fuente
+Hoja.Range("A1").Interior.Color = RGB(0, 255, 0)	'>> Color de fondo de celda
+Hoja.Range("A1").RowHeight = 25.5			'>> Alto de Fila
+Hoja.Range("A1").BorderAround(1)			'>> Bordes de todos los lados (x) x=tipo de borde 1-6
+Hoja.Range("A1").Borders(x).LineStyle = y		'>> Borde de un lado x=Borde(1-6)  y=Tipo de borde
+Hoja.Range("A1").Borders(x).Weight = y			'>> Grosor de Borde, x=Borde(1-6)  y=Grosor(1-4)
+Hoja.Range("A1").Borders(x).Color = RGB(255, 0, 0)	'>> Color de borde, x=Borde(1-6)  
+
+Hoja.Range("A1").WrapText = true			'>>El texto se ajusta al tamaño de la celda
+
+Hoja.Shapes.AddPicture("C:\GPS\PEMEX.png", False, True, 50, 50, 196, 81)	>>Agregar Imagen (X,Y,Ancho,Alto)
+++
+	Excel.Visible = True				'>> Vista Impresion
+	Hoja.PrintPreview()
+++
+
+/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\

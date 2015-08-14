@@ -1,0 +1,2542 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+		<title>Colabora.NET: Reportes en Excel con VB.NET</title>
+		<meta http-equiv="Window-target" content="_top">
+		<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+		<meta name="keywords" content="Excel Reports; Excel VB.NET; VB.NET REPORTS">
+		<meta name="description" content="Como generar reportes en EXCEL desde VB.NET">
+		</head>
+		
+<body alink="#FF0000" background="ELMoreno_ExcelReports%20Archivos/cuadriculaGris30.gif" bgcolor="#FFFFFF" link="#0000FF" vlink="#0000FF">
+
+<script language="JavaScript">
+var gsPath = "../../"
+function IrADeLista(){
+    var s1 = gsBanner.D1.selectedIndex;
+    var s2 = gsBanner.D1.options[s1].value;
+    if( s2 != "Selecciona" )
+        window.location = gsPath + s2;
+}
+</script>
+<script language="JavaScript" src="ELMoreno_ExcelReports%20Archivos/elGuille.js"></script><!-- #Inicio de la cabecera de elGuille.info (15/Dic/2012) --><center><div style="width:850px;"><div class="colorClaro" style="text-align:left"><div style="border: 1px solid gray; border-collapse:collapse;padding:.2em"><!-- primera fila --><div style="float:left; width:155px; margin-top:2px; margin-left:2px">    <a href="http://www.elguille.info/" title="Ir al índice de elGuille"><img src="ELMoreno_ExcelReports%20Archivos/elGuille_luna300x200.jpg" alt="la luna del guille o el guille que está en la luna" style="width:150px;height:100px;border-width:0px;"></a></div><div style="float:left; width:685px; text-align:center; margin-top:2px;">    <div style="font-size:x-small; font-weight:500">            <div style="float:left; width:170px; height:32px; background-color:#fce803; /*amarillo*/">                <br><a href="http://www.elguille.info/lonuevo/2013/" title="Lo publicado en este mes" style="color:black">Lo + nuevo</a>            </div>            <div style="float:left; width:170px; height:32px; background-color:#bbf5c7; /* verde */">                <br><a href="http://www.elguille.info/vb/" title="Sección de Visual Basic 6.0 y anterior" style="color:black">Visual Basic 6</a>            </div>            <div style="float:left; width:170px; height:32px; background-color:#c666fc; /* violeta */">                <br><a href="http://www.elguille.info/net/winfx/" title="XAML y .NET aka WinFX" style="color:black">&lt;Xaml /&gt;</a>            </div>            <div style="float:left; width:170px; height:32px; background-color:#1cb2fb; /* azul */">                <br><a href="http://www.elguille.info/HTMLscripts/HTML_Tip.aspx" title="Lenguajes script y HTML" style="color:black">HTML / Scripts</a>            </div>            <div style="float:left; width:170px; height:32px; background-color:#03b4b4; /* verdoso */">                <br><a href="http://www.elguille.info/net/ASPNET/" title="Páginas Web con .NET" style="color:black">ASP.NET</a>            </div>            <div style="float:left; width:340px; height:32px; background-color:#b2d4fb; /*azul*/">                <br><a href="http://www.elguille.info/NET/comodotnet.aspx" title="Trucos de cómo hacer las cosas en .NET" style="color:black">Cómo en .NET</a>            </div>            <div style="float:left; width:170px; height:32px; background-color:#F09609; /* naranja */">                <br><a href="http://www.elguille.info/net/ADONET/" title="Acceso a datos con .NET" style="color:black">ADO.NET</a>            </div>            <div style="float:left; width:170px; height:32px; background-color:#fab8b8; /* rosado */">                <br><a href="http://www.elguille.info/NET/" title="Todo lo relacionado con .NET" style="color:black">Lenguajes .NET</a>            </div>            <div style="float:left; width:170px; height:32px; background-color:#fcbb70; /* naranja */">                <br><a href="http://www.elguille.info/foros_guille.aspx" title="Los foros del Guille" style="color:black">Foros</a>            </div>            <div style="float:left; width:170px; height:32px; background-color:#fcf703; /* amarillo */">                <br><a href="http://www.elguille.info/Windows/" title="Sección sobre Windows 8 / Server 2012 / 8.1 Preview" style="color:black">Windows</a>            </div>            <div style="float:left; width:170px; height:32px; background-color:#e25151; /* rojo */">                <br><a href="http://www.elguille.info/colabora/colabora.htm" title="Las colaboraciones" style="color:black">Colaboraciones</a>            </div>    </div></div><!-- Poner esto para que en el IE10 no se pongan el marco sólo en la segunda fila (en Chrome se ve bien de las dos formas) --><div style="clear: both; height: 0; font-size: 1px; line-height: 0px;"></div><!-- segunda fila --><div style="float:left; width:20px; margin-top:5px">&nbsp;</div><div style="float:left; width:820px; text-align:center; margin-top:5px; margin-bottom:5px"><span style="font-family:Comic Sans MS; color:navy; font-size:large; font-weight:bold; margin-left:4px">    <a title="¿Quién es el Guille?" href="http://www.elguille.info/el_guille.aspx" style="color:navy">el Guille</a>, la Web del Visual Basic, C#, .NET y más...</span></div><!-- para dejar de posicionar los divs con los anteriores --><div style="clear: both; height: 0; font-size: 1px; line-height: 0px;"></div></div></div></div></center><div style="clear: both; height: 0; font-size: 1px; line-height: 0px;"></div><!-- #Final de la cabecera de elGuille.info (15/Dic/2012) --><div style="margin:4px"><center><!-- BEGIN PUB-FIT 468x60 - elguille.info --><iframe marginwidth="0" marginheight="0" src="ELMoreno_ExcelReports%20Archivos/1319.htm" frameborder="0" height="60" scrolling="NO" width="468"></iframe><!-- END PUB-FIT 468x60 - elguille.info --></center></div>
+
+<p align="right"><font face="Verdana"><a href="http://www.elguille.info/colabora/puntoNET/colaboraNET.htm">
+<img src="ELMoreno_ExcelReports%20Archivos/colabora_guillepuntonet.jpg" align="bottom" border="0" height="30" width="500"></a></font></p>
+
+<table style="border-collapse: collapse" id="table1" border="0" cellpadding="0" width="100%">
+<tbody><tr><td align="left" valign="top" width="80%">
+		<p><strong><font face="Verdana" size="7">Reportes en Excel con VB.NET</font></strong></p>
+        <p><font face="Verdana" size="2"><strong>Fecha: 26/May/04 (26/May/2004)<br>
+					Autor: Enriquillo Mañón Ramírez (enriquillo_manon@hotmail.com)</strong></font></p>
+</td>
+<td align="center" valign="top" width="20%">
+<iframe src="ELMoreno_ExcelReports%20Archivos/Domitienda.htm" frameborder="0" height="240" scrolling="NO" width="180"></iframe>
+</td>
+</tr>
+</tbody></table>
+		<hr color="#000080" noshade="noshade" size="3" width="90%">
+		<blockquote>
+			<p class="MsoNormal" style="TEXT-ALIGN: justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">A muchos desarrolladores se 
+les a presentado la necesidad de crear reportes con ciertos estilos provenientes 
+de herramientas de terceros, por lo regular los ejecutivos les gusta la forma en 
+que se presentan los informes en formato EXCEL y muchas veces informes generados 
+por sistemas de gestión, se nos solicita que sean exportados a EXCEL para 
+ajustarlos a sus necesidades y gustos. Bueno con este articulo pretendo 
+mostrarle una forma sencilla de leer una base de datos y generar un informe 
+directamente en EXCEL aprovechando todas las funcionalidades de esta 
+herramienta, se podría decir que mas del 50 porciento de las computadoras de 
+oficina cuentan con alguna versión de Microsoft Office, así que estimo que le 
+será de utilidad alguno de ustedes.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Iniciamos.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Creamos una nueva solución en 
+Visual Studio .NET y agregamos una referencia a la librería de objeto de Excel 
+que se encuentra en la paleta COM de la ventana de agregar referencias en Visual 
+Studio .NET</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify"><span lang="ES-DO"></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">
+					<img alt="" src="ELMoreno_ExcelReports%20Archivos/ElMoreno_Ref.jpg" height="266" width="632"></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN: justify"><span style="FONT-FAMILY: Verdana" lang="ES-DO">Si la versión de Office con la que cuentan es 
+  2000 la librería seria Microsoft Excel 9.0 Object Library, luego hacemos clic 
+  en Select y luego en OK y listo.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Creamos una forma que será 
+nuestra plataforma de lanzamiento desde donde lanzaremos los ejemplos que 
+crearemos nuestra forma ser vera así:</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify"><span lang="ES-DO">&nbsp;<img alt="" src="ELMoreno_ExcelReports%20Archivos/ElMoreno_Main.jpg"></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify"><span lang="ES-DO">&nbsp;</span><span style="FONT-FAMILY: Verdana" lang="ES-DO">El 
+primer botón lo utilizaremos para crear un pequeño ejemplo de cómo tratar un&nbsp; 
+documento EXCEL como una base de datos y leer sus documentos con sentencias SQL, 
+el segundo botón lo utilizaremos para crear nuestro listado en EXCEL, ahora le 
+describo cual es el procedimiento.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="MARGIN-LEFT: 47.25pt; TEXT-INDENT: -29.25pt; TEXT-ALIGN: justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">1.<span style="FONT:7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Utilizaremos la base de datos Northwind que trae Microsoft Access como 
+demo.</span></p>
+			<p class="MsoNormal" style="MARGIN-LEFT: 47.25pt; TEXT-INDENT: -29.25pt; TEXT-ALIGN: justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">2.<span style="FONT:7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Leeremos las tablas Categories y Productos para crear un listado de 
+productos por categorías.</span></p>
+			<p class="MsoNormal" style="MARGIN-LEFT: 47.25pt; TEXT-INDENT: -29.25pt; TEXT-ALIGN: justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">3.<span style="FONT:7pt 'Times New Roman'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Crearemos un grafico estadístico con todas las categorías de productos 
+que hay en el listado</span><span lang="ES-DO">.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify"><span lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">El Código &#8230;</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Llego la hora de la 
+codificación, primero definiremos una variable tipo Excel.Application a nivel de 
+formulario la cual hace referencia a EXCEL.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e0e0e0">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos un objeto Excel</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e0e0e0">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> m_Excel <span style="COLOR:blue">As</span> 
+Excel.Application</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Agregamos el siguiente código 
+en el evento &#8220;Closing&#8221; del formulario para cuando cerremos el formulario 
+eliminar la instancia de Excel que este ejecutándose.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">If</span> <span style="COLOR:blue">Not</span> 
+m_Excel <span style="COLOR:blue">Is</span> <span style="COLOR:blue">Nothing</span>
+<span style="COLOR:blue">Then</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m_Excel.Quit()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m_Excel = <span style="COLOR:blue">Nothing</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">End</span> <span style="COLOR:blue">If</span></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Hacemos doble clic en el 
+segundo botón &#8220;Listado en Excel, luego definiremos una variable de tipo string 
+para controlar la ruptura por nombre de categorías. </span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR:blue">Dim</span> CategoryName
+<span style="COLOR:blue">As</span> <span style="COLOR:blue">String</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="COLOR:green">' Variable para controlar la ruptura por nombre de 
+categorías</span></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Creamos 1 variable tipo 
+Excel.WorkBook para crear el documento Excel y otra tipo Excel.WorkSheet para 
+crear la hoja del documento.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos un objeto WorkBook </span>
+</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objLibroExcel
+<span style="COLOR:blue">As</span> Excel.Workbook</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos un objeto WorkSheet</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objHojaExcel
+<span style="COLOR:blue">As</span> Excel.Worksheet</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Ahora crearemos una conexión a 
+la base de datos northwind y leeremos los registros de las tablas Categories y 
+Producta, crearemos un dataset y llevaremos los datos al DataSet.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objSQLConnect
+<span style="COLOR:blue">As</span> <span style="COLOR:blue">New</span> 
+System.Data.OleDb.OleDbConnection("Data Source=Northwind.mdb;Password=;Provider=Microsoft.Jet.OLEDB.4.0;User 
+ID=Admin")</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR:blue">Dim</span> objSQLAdapter
+<span style="COLOR:blue">As</span> <span style="COLOR:blue">New</span> 
+OleDb.OleDbDataAdapter("select CategoryName,ProductID,ProductName,UnitPrice from 
+Products,Categories Where Products.CategoryID = Categories.CategoryID order by 
+Categories.CategoryID", objSQLConnect)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objDataSet
+<span style="COLOR:blue">As</span> <span style="COLOR:blue">New</span> DataSet("ExcelTest")</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE: 9pt; FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objSQLAdapter.Fill(objDataSet, "Categories")</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Iniciamos una instancia de 
+EXCEL y </span>
+				<span style="FONT-SIZE:10pt;
+FONT-FAMILY:'Courier New'" lang="ES-DO">Hacemos visibles para ver como se va 
+creando el reporte, podemos hacerlo visible al final si se desea.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Iniciamos una instancia a Excel</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m_Excel = <span style="COLOR:blue">New</span> Excel.Application</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m_Excel.Visible = <span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Es importante tener en mente 
+que algunas datas, tales como Fechas y números, pueden ser desplegadas 
+correctamente cuando se conoce la configuración regional de la computadora donde 
+se trabaja. Para interpretar, convertir y presentar la data debemos considerar 
+la variedad de lenguajes y versiones de Microsoft Office y Microsoft Windows que 
+el usuario puede tener, por ejemplo cuando Excel recibe una llamada desde un 
+programa externo, Excel utiliza el identificador Local (LCID) enviado por 
+cliente que realizó la llamada para procesar los valores tales como 
+&#8220;05/06/2005&#8221;or &#8220;29,250.00&#8221;, si su configuración regional no coincide con esta 
+LCID se producirá un error de ejecución o la data no se desplegará 
+correctamente.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Para evitar estos problemas 
+crearemos una variable tipo &#8220;CultureInfo&#8221;para mantener la cultura con la que 
+esta configurada la maquina y Crearemos una nueva cultura para trabajar de tipo 
+Inglés-Estados Unidos (&#8220;es-US)&#8221;).</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos una variable para guardar la 
+cultura actual</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> OldCultureInfo
+<span style="COLOR:blue">As</span> System.Globalization.CultureInfo = 
+_&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+System.Threading.Thread.CurrentThread.CurrentCulture</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'Crear una cultura standard (en-US) inglés 
+estados unidos</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.Threading.Thread.CurrentThread.CurrentCulture = _</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">New</span> System.Globalization.CultureInfo("en-US")</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Ahora creamos un nuevo 
+documento y seleccionamos la primera hoja del documento en la cual crearemos 
+nuestro informe</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos una instancia del Workbooks de 
+Excel</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos una instancia de la primera 
+hoja de trabajo de Excel</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objLibroExcel = m_Excel.Workbooks.Add()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel = objLibroExcel.Worksheets(1)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Visible = Excel.XlSheetVisibility.xlSheetVisible</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Hacemos esta hoja la visible en 
+pantalla </span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' (como seleccionamos la primera esto no 
+es necesario</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' si seleccionamos una diferente a la 
+primera si lo</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' necesitaríamos, esto lo hacemos como 
+forma de mostrar como</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; MARGIN-LEFT: 0.5in; TEXT-INDENT: 0.5in">
+				<span style="FONT-SIZE:9pt;COLOR:green;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp; cambiar de entre hojas en un documento Excel).</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Activate()</span></p>
+			<p class="MsoNormal">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-INDENT: 0.5in">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+Para hacer referencia a cualquiera de las celdas de una hoja de Excel o a un 
+rango de celdas de la hoja de Excel debemos hacerlo a través del Objeto <b>Range </b>entre<b></b>los parámetros que recibe este objeto debemos enviarle las 
+coordenadas de la celda o rango de celda que deseamos acceder Ej.:</span></p>
+			<p class="MsoNormal" style="TEXT-INDENT: 0.5in">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-INDENT: 0.5in"><i>
+					<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+HojaExcel.Range(&#8220;A1:D1&#8221;)</span></i><span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO"> 
+aquí hacemos referencia a las celdas desde la A1 hasta la D1 lo que quiere decir 
+que incluye A1, B1, C1 y D1.</span></p>
+			<p class="MsoNormal" style="TEXT-INDENT: 0.5in">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal"><span lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><i>
+					<span style="FONT-SIZE:10pt;
+FONT-FAMILY:'Courier New'" lang="ES-DO">HojaExcel.Range(&#8220;A1&#8221;)</span></i><span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO"> 
+aquí hacemos referencia a la celda A1.</span></p>
+			<p class="MsoNormal"><i><span lang="ES-DO"></span></i>&nbsp;</p>
+			<p class="MsoNormal"><span lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><i>
+					<span style="FONT-SIZE:10pt;
+FONT-FAMILY:'Courier New'" lang="ES-DO">HojaExcel.Range(&#8220;A1,A3,A5,A7&#8221;)</span></i><span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO"> 
+aquí hacemos referencia a las celdas A1, A3, A5 y A7, esto seria igual que si 
+presionáramos el control y hacemos clic en cada una de estas celdas.</span></p>
+			<p class="MsoNormal">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+Creamos el encabezado del reporte, la primera línea une las celdas y las 
+convierte un en una sola, la segunda línea Asigna el nombre del encabezado, la 
+tercera línea asigna negrita al titulo y la cuarta línea signa un Size a titulo 
+de 15.</span></p>
+			<p class="MsoNormal">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Crear el encabezado de nuestro informe</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A1:D1").Merge()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A1:D1").Value = "MAÑON FOOT SHOP, S. A."</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A1:D1").Font.Bold = <span style="COLOR:blue">
+True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A1:D1").Font.Size = 15</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Crear el subencabezado de nuestro 
+informe</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A2:D2").Merge()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Range("A2:D2").Value = "Ingredient List by Category"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A2:D2").Font.Italic = <span style="COLOR:blue">
+True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A2:D2").Font.Size = 13</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Creamos los encabezados de las 
+columnas de nuestro informe, este constará de&nbsp; 4 columnas,&#8220;Categoria&#8221;que 
+desplegara el nombre de la categorías, &#8220;Código&#8221;que desplegara el código del 
+producto, &#8220;Nombre&#8221;desplegara el nombre del producto y &#8220;Precio&#8221; para desplegar el 
+precio del producto formateado según una mascarilla que especificaremos.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<span style="COLOR:blue">Dim</span> objCelda
+<span style="COLOR:blue">As</span> Excel.Range = objHojaExcel.Range("A3", 
+Type.Missing)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda.Value = "Categoría"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda = objHojaExcel.Range("B3", Type.Missing)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda.Value = "Código"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda = objHojaExcel.Range("C3", Type.Missing)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda.Value = "Nombre"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda = objHojaExcel.Range("D3", Type.Missing)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda.Value = "Precio RD$"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda.EntireColumn.NumberFormat = "###,###,###.00"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Iniciamos las variables de 
+control para desplegar los registros de nuestra tabla, la variable &#8220;i&#8221; la 
+utilizaremos para controlar el número de la fila y la variable &#8220;j&#8221;la 
+utilizaremos para controlar el rango que cubre el subtotal que será desde j+2 
+hasta i &#8211; 1.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> i <span style="COLOR:blue">As</span>
+<span style="COLOR:blue">Integer</span> = 5</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> j <span style="COLOR:blue">As</span>
+<span style="COLOR:blue">Integer</span> = 5</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CategoryName = ""</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Recorremos los registros de la 
+tabla y lo asignamos a su correspondiente celda en su respectiva fila en la 
+hoja, por cada cambio de categorías imprimiremos un subtotal.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">For</span> <span style="COLOR:blue">Each</span> 
+objRow <span style="COLOR:blue">As</span> DataRow <span style="COLOR:blue">In</span> 
+objDataSet.Tables(0).Rows</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">''' Si Ya se ha impreso una categorías 
+y la próxima categorías </span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">''' es diferente a la categorías a 
+imprimir, imprimir los totales</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">If</span> CategoryName.Length &gt; 0
+<span style="COLOR:blue">AndAlso</span> CategoryName &lt;&gt; objRow.Item(0)
+<span style="COLOR:blue">Then</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, 1) = "Total Category " &amp; 
+CategoryName.Trim</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, 2) = "=count(D" &amp; (j + 2).ToString &amp; 
+":D" &amp; (i - 1).ToString &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objHojaExcel.Cells(i,
+ 3) = "Subtotal Precio:"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, 4) = "=sum(D" &amp; (j + 2).ToString &amp; 
+":D" &amp; (i - 1).ToString &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Range("A" &amp; i.ToString &amp; ":D" &amp; 
+i.ToString).Font.Bold 
+= <span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j = i</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i += 2</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">End</span> <span style="COLOR:blue">If</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignar la categoría impresa</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CategoryName = objRow.Item(0)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignar los valores de los 
+registros a las celdas</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;objHojaExcel.Cells(i, "A") = objRow.Item(0)
+<span style="COLOR:green">'CategoryName'</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, "B") = objRow.Item(1)
+<span style="COLOR:green">'ProductID'</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, "C") = objRow.Item(2)
+<span style="COLOR:green">'ProductName'</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, "D") = objRow.Item(3)
+<span style="COLOR:green">'UnitPrice'</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:green;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Avanzamos una fila</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i += 1</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Next</span></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Luego de imprimir todos los 
+registros imprimiremos el subtotal de la categorías final.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'* El Ultimo subtotal</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Cells(i, 1) = "Total Category " &amp; CategoryName.Trim</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Cells(i, 2) = "=count(D" &amp; (j + 2).ToString &amp; ":D" 
+&amp; (i 
+- 1).ToString &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Cells(i, 3) = "Subtotal Precio:"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Cells(i, 4) = "=sum(D" &amp; (j + 2).ToString &amp; ":D" 
+&amp; (i - 
+1).ToString &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  objHojaExcel.Range("A" &amp; i.ToString &amp; ":D" &amp; i.ToString).Font.Bold 
+  =
+        
+<span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE: 9pt; FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE: 9pt; FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Ahora seleccionado todo el 
+informe y ajustaremos el ancho de las columnas al ancho de su contenido máximo, 
+asignamos también el auto filtro para poder filtrar</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Seleccionar todo el bloque desde A1 
+hasta D #de filas</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objRango
+<span style="COLOR:blue">As</span> Excel.Range =         objHojaExcel.Range(<span style="COLOR:blue">String</span>.Format(strRangoTotal, 
+intRowInicial, i - 1))</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Seleccionamos todo el rango 
+especificado</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.Select()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Ajustamos el ancho de las columnas al 
+ancho máximo del</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' contenido de sus celdas</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.Columns.AutoFit()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignar filtro por columna</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;objRango.AutoFilter(1, , VisibleDropDown:=<span style="COLOR:blue">True</span>)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignar un formato automático</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.AutoFormat(11, Alignment:=<span style="COLOR:blue">False</span>)</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE: 9pt; FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Ahora crearemos el total 
+general de los datos impresos, ejecutamos el método printpreview para 
+presentarlo en vista previa</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+				<span style="FONT-SIZE:9pt;COLOR:green;FONT-FAMILY:'Courier New'" lang="ES-DO">
+'' Crear un total general</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objHojaExcel.Cells(i, &#8220;A&#8221;) = "Total "</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Cells(i, &#8220;B&#8221;) = "=count(" &amp; <span style="COLOR:blue">
+String</span>.Format(strRangoTotal, intRowInicial, i - 1) &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objHojaExcel.Cells(i, &#8220;C&#8221;) = "Total Precio:"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objHojaExcel.Cells(i, &#8220;D&#8221;) = "=sum(" &amp; <span style="COLOR:blue">
+String</span>.Format(strRangoTotal, intRowInicial, i - 1) &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-INDENT: 63pt; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+objLibroExcel.PrintPreview()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Hasta aquí podemos probar 
+nuestro informe, al ejecutarlo y hacer clic en el botón &#8220;Listado en Excel&#8221;, se 
+desplegara un listado como sigue:</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">
+					<img alt="" src="ELMoreno_ExcelReports%20Archivos/ElMoreno_Preview.jpg"></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Y este es nuestro código 
+completo hasta el momento:</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> CategoryName
+<span style="COLOR:blue">As</span> <span style="COLOR:blue">String</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="COLOR:green">' Variable para controlar la ruptura por nombre de 
+categorías</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:green;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos un objeto WorkBook </span>
+</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objLibroExcel
+<span style="COLOR:blue">As</span> Excel.Workbook</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos un objeto WorkSheet</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objHojaExcel
+<span style="COLOR:blue">As</span> Excel.Worksheet</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Iniciamos una conexión a la base de 
+datos NorthWind y seleccionamos</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' varios registros desde las tablas 
+Products,Categories</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objSQLConnect
+<span style="COLOR:blue">As</span> <span style="COLOR:blue">New</span> 
+System.Data.OleDb.OleDbConnection("Data Source=Northwind.mdb;Password=;Provider=Microsoft.Jet.OLEDB.4.0;User 
+ID=Admin")</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objSQLAdapter
+<span style="COLOR:blue">As</span> <span style="COLOR:blue">New</span> 
+OleDb.OleDbDataAdapter("select CategoryName,ProductID,ProductName,UnitPrice from 
+Products,Categories Where Products.CategoryID = Categories.CategoryID order by 
+Categories.CategoryID", objSQLConnect)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objDataSet
+<span style="COLOR:blue">As</span> <span style="COLOR:blue">New</span> DataSet("ExcelTest")</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objSQLAdapter.Fill(objDataSet, "Categories")</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Iniciamos una instancia a Excel</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m_Excel = <span style="COLOR:blue">New</span> Excel.Application</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m_Excel.Visible = <span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos una variable para guardar la 
+cultura actual</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> OldCultureInfo
+<span style="COLOR:blue">As</span> System.Globalization.CultureInfo = _</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+System.Threading.Thread.CurrentThread.CurrentCulture</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'Crear una cultura standard (en-US) inglés 
+estados unidos</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.Threading.Thread.CurrentThread.CurrentCulture = _</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">New</span> System.Globalization.CultureInfo("en-US")</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos una instancia del Workbooks de 
+Excel</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos una instancia de la primera 
+hoja de trabajo de Excel</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objLibroExcel = m_Excel.Workbooks.Add()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel = objLibroExcel.Worksheets(1)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Visible = Excel.XlSheetVisibility.xlSheetVisible</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Hacemos esta hoja la visible en 
+pantalla </span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' (como seleccionamos la primera esto no 
+es necesario</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' si seleccionamos una diferente a la 
+primera si lo</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' necesitaríamos).</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Activate()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Crear el encabezado de nuestro informe</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A1:D1").Merge()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A1:D1").Value = "MAÑON FOOT SHOP, S. A."</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A1:D1").Font.Bold = <span style="COLOR:blue">
+True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A1:D1").Font.Size = 15</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Crear el subencabezado de nuestro 
+informe</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A2:D2").Merge()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Range("A2:D2").Value = "Ingredient List by Category"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A2:D2").Font.Italic = <span style="COLOR:blue">
+True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A2:D2").Font.Size = 13</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objCelda
+<span style="COLOR:blue">As</span> Excel.Range = objHojaExcel.Range("A3", 
+Type.Missing)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda.Value = "Categoría"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda = objHojaExcel.Range("B3", Type.Missing)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda.Value = "Código"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda = objHojaExcel.Range("C3", Type.Missing)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda.Value = "Nombre"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda = objHojaExcel.Range("D3", Type.Missing)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda.Value = "Precio RD$"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda.EntireColumn.NumberFormat = "###,###,###.00"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> i <span style="COLOR:blue">As</span>
+<span style="COLOR:blue">Integer</span> = 5</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> j <span style="COLOR:blue">As</span>
+<span style="COLOR:blue">Integer</span> = 5</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CategoryName = ""</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">For</span> <span style="COLOR:blue">Each</span> 
+objRow <span style="COLOR:blue">As</span> DataRow <span style="COLOR:blue">In</span> 
+objDataSet.Tables(0).Rows</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">''' Si Ya se ha impreso una categorías 
+y la próxima categorías </span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">''' es diferente a la categorías a 
+imprimir, imprimir los totales</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">If</span> CategoryName.Length &gt; 0
+<span style="COLOR:blue">AndAlso</span> CategoryName &lt;&gt; objRow.Item(0)
+<span style="COLOR:blue">Then</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, 1) = "Total Category " &amp; 
+CategoryName.Trim</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, 2) = "=count(D" &amp; (j + 2).ToString &amp; 
+":D" &amp; (i - 1).ToString &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, 3) = "Subtotal Precio:"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, 4) = "=sum(D" &amp; (j + 2).ToString &amp; 
+":D" &amp; (i - 1).ToString &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Range("A" &amp; i.ToString &amp; ":D" &amp; 
+i.ToString).Font.Bold 
+= <span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j = i</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i += 2</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">End</span> <span style="COLOR:blue">If</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignar la categoría impresa</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CategoryName = objRow.Item(0)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignar los valores de los 
+registros a las celdas</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, "A") = objRow.Item(0)
+<span style="COLOR:green">'CategoryName'</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, "B") = objRow.Item(1)
+<span style="COLOR:green">'ProductID'</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, "C") = objRow.Item(2)
+<span style="COLOR:green">'ProductName'</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, "D") = objRow.Item(3)
+<span style="COLOR:green">'UnitPrice'</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:green;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Avanzamos una fila</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i += 1</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Next</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'* El Ultimo subtotal</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Cells(i, "A") = "Total Category " &amp; CategoryName.Trim</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Cells(i, "B") = "=count(D" &amp; (j + 2).ToString &amp; 
+":D" &amp; 
+(i - 1).ToString &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Cells(i, "C") = "Subtotal Precio:"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Cells(i, "D") = "=sum(D" &amp; (j + 2).ToString &amp; ":D" 
+&amp; (i 
+- 1).ToString &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  objHojaExcel.Range("A" &amp; i.ToString &amp; ":D" &amp; i.ToString).Font.Bold 
+  =
+        
+<span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Avanzamos una fila</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i += 1</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Seleccionar todo el bloque desde A1 
+hasta D #de filas</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objRango
+<span style="COLOR:blue">As</span> Excel.Range = objHojaExcel.Range("A3:D" &amp; (i 
+- 1).ToString)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Seleccionamos todo el rango 
+especificado</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.Select()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Ajustamos el ancho de las columnas al 
+ancho máximo del</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' contenido de sus celdas</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.Columns.AutoFit()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignar filtro por columna</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.AutoFilter(1, , VisibleDropDown:=<span style="COLOR:blue">True</span>)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignar un formato automático</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.AutoFormat(11, Alignment:=<span style="COLOR:blue">False</span>)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<span style="COLOR:green">'' Seleccionamos el total general del 
+reporte y asignamos</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' font a negrita e itálica</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objRango = objHojaExcel.Range("A" &amp; i.ToString &amp; ":D" &amp; 
+i.ToString)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.Select()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.Font.Bold = <span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;objRango.Font.Italic = <span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Crear un total general</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Cells(i, 1) = "Total "</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Cells(i, 2) = "=count(A3:D" &amp; (i - 1).ToString &amp; 
+")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Cells(i, 3) = "Total Precio:"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objHojaExcel.Cells(i,
+ 4) = "=sum(A3:D" &amp; (i - 1).ToString &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objLibroExcel.PrintPreview()</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Ahora crearemos un grafico 
+estadístico en base a los resultados del informe que creamos, los valores de la 
+&#8220;X&#8221; serán los totales y los valores de la &#8220;Y&#8221;seran los subtotales de las 
+categorías.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Primero creamos un objetivo de 
+tipo Excel.Chart, un objeto de tipo Excel.SeriesCollection que hace referencias 
+a cada uno de los valores del grafico y 2 objetivos de tipos Excel.Axes que hace 
+referencias a las columnas del grafico, el grafico será tipo Barra.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Crear un grafico estadístico</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objExcelChart
+<span style="COLOR:blue">As</span> Excel.Chart</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> xlsSeries
+<span style="COLOR:blue">As</span> Excel.SeriesCollection</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> xlsAxisCategory, xlsAxisValue
+<span style="COLOR:blue">As</span> Excel.Axes</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Primero instanciamos el objeto 
+con un nuevo grafico</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Agregamos un nuevo grafico</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objExcelChart = objLibroExcel.Charts.Add</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Luego creamos un rango con los 
+subtotales del informe que serán los valores para nuestro grafico</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR:green">'' Creamos un rango con los totales de 
+cada categorías para crear nuestro gráfico</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objRango = 
+&nbsp;objHojaExcel.Range("=Sheet1!$D$17,Sheet1!$D$31,Sheet1!$D$46,Sheet1!$D$58,Sheet1!$D$67,Sheet1!$D$75,Sheet1!$D$82,Sheet1!$D$96")</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Cada valor dentro de la 
+sentencia Range representan la celda que contiene el valor para cada barra del 
+grafico, cada valor separado por coma representa una barra para nuestro grafico
+</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Ej.:</span></p>
+			<p class="MsoNormal"><span style="FONT-FAMILY: Verdana" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Sheet1!$D$17 = hace referencia a la celda 17 de la columna &#8220;D&#8221; de la hoja 1 
+(Sheet1).</span></p>
+			<p class="MsoNormal"><span style="FONT-FAMILY: Verdana" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+Sheet1!$D$31 = hace referencia a la celda 31 de la columna &#8220;D&#8221; de la hoja 1 y 
+así sucesivamente.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Asignamos el tipo de grafico 
+que queremos crear, en este caso tipo columna</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:green;FONT-FAMILY:'Courier New'" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; '' Asignamos el tipo de grafico</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objExcelChart.ChartType = 
+Excel.XlChartType.xlColumnClustered</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Asignamos el rango que creamos 
+como fuente de datos</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignamos el total</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objExcelChart.SetSourceData(objRango)</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Seleccionamos las columnas del 
+grafico, especificamos que se desplegue los valores de las columnas al top de 
+cada columna, asignamos el titulo de cada subtotal a su correspondiente columna 
+del grafico</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Seleccionamos los diferentes 
+elementos del grafico</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries = objExcelChart.SeriesCollection</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR:green">'' Desplegar los valores de cada 
+columna al top de cada columna</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;objExcelChart.ApplyDataLabels(_</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+Excel.XlDataLabelsType.xlDataLabelsShowValue)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignamos el nombre de cada serie</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(1).Name = objHojaExcel.Range("A17").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(2).Name = objHojaExcel.Range("A31").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(3).Name = objHojaExcel.Range("A46").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(4).Name = objHojaExcel.Range("A58").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(5).Name = objHojaExcel.Range("A67").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(6).Name = objHojaExcel.Range("A75").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(7).Name = objHojaExcel.Range("A82").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(8).Name = objHojaExcel.Range("A96").Value</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Seleccionamos las Axis del 
+grafico y asignamos un titulo para las axis por categorías y otro para las axis 
+por valor.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsAxisCategory = objExcelChart.Axes(, 
+Excel.XlAxisGroup.xlPrimary)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  xlsAxisCategory.Item(Excel.XlAxisType.xlCategory).HasTitle =
+  
+<span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+xlsAxisCategory.Item(Excel.XlAxisType.xlCategory).AxisTitle.Characters.Text
+ 
+= "Totales por categoría"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsAxisValue = objExcelChart.Axes(, Excel.XlAxisGroup.xlPrimary)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  xlsAxisValue.Item(Excel.XlAxisType.xlValue).HasTitle =
+  
+<span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsAxisValue.Item(Excel.XlAxisType.xlValue).AxisTitle.Characters.Text 
+= "Rango de Precios"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsAxisValue.Item(Excel.XlAxisType.xlValue).AxisTitle.Orientation 
+= Excel.XlOrientation.xlVertical</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  xlsAxisValue.Item(Excel.XlAxisType.xlValue).HasMajorGridlines =
+  
+<span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE: 9pt; FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Ahora movemos la sentencia que 
+ejecuta el método PrintPreview al final del código luego de generar el grafico</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objLibroExcel.PrintPreview()</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Listo, nuestro código completo 
+luce de la siguiente forma (este código también incluye la parte que describimos 
+anterior sobre generar el informe):</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Try</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> CategoryName
+<span style="COLOR:blue">As</span> <span style="COLOR:blue">String</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<span style="COLOR:green">' Variable para controlar la ruptura por nombre de 
+categorías</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:green;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos un objeto WorkBook </span>
+</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objLibroExcel
+<span style="COLOR:blue">As</span> Excel.Workbook</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos un objeto WorkSheet</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objHojaExcel
+<span style="COLOR:blue">As</span> Excel.Worksheet</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Iniciamos una conexión a la base de 
+datos NorthWind y seleccionamos</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' varios registros desde las tablas 
+Products,Categories</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objSQLConnect
+<span style="COLOR:blue">As</span> <span style="COLOR:blue">New</span> 
+System.Data.OleDb.OleDbConnection("Data Source=Northwind.mdb;Password=;Provider=Microsoft.Jet.OLEDB.4.0;User 
+ID=Admin")</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objSQLAdapter
+<span style="COLOR:blue">As</span> <span style="COLOR:blue">New</span> 
+OleDb.OleDbDataAdapter("select CategoryName,ProductID,ProductName,UnitPrice from 
+Products,Categories Where Products.CategoryID = Categories.CategoryID order by 
+Categories.CategoryID", objSQLConnect)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objDataSet
+<span style="COLOR:blue">As</span> <span style="COLOR:blue">New</span> DataSet("ExcelTest")</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objSQLAdapter.Fill(objDataSet, "Categories")</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Iniciamos una instancia a Excel</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m_Excel = <span style="COLOR:blue">New</span> Excel.Application</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;m_Excel.Visible = <span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos una variable para guardar la 
+cultura actual</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> OldCultureInfo
+<span style="COLOR:blue">As</span> System.Globalization.CultureInfo = _</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+System.Threading.Thread.CurrentThread.CurrentCulture</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR:green">'Crear una cultura standard (en-US) inglés 
+estados unidos</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.Threading.Thread.CurrentThread.CurrentCulture = _</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">New</span> System.Globalization.CultureInfo("en-US")</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos una instancia del Workbooks de 
+Excel</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos una instancia de la primera 
+hoja de trabajo de Excel</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objLibroExcel = m_Excel.Workbooks.Add()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel = objLibroExcel.Worksheets(1)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Visible = Excel.XlSheetVisibility.xlSheetVisible</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Hacemos esta hoja la visible en 
+pantalla </span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' (como seleccionamos la primera esto no 
+es necesario</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' si seleccionamos una diferente a la 
+primera si lo</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' necesitaríamos).</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Activate()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Crear el encabezado de nuestro informe</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A1:D1").Merge()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A1:D1").Value = "MAÑON FOOT SHOP, S. A."</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A1:D1").Font.Bold = <span style="COLOR:blue">
+True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A1:D1").Font.Size = 15</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Crear el subencabezado de nuestro 
+informe</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A2:D2").Merge()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Range("A2:D2").Value = "Ingredient List by Category"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A2:D2").Font.Italic = <span style="COLOR:blue">
+True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Range("A2:D2").Font.Size = 13</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objCelda
+<span style="COLOR:blue">As</span> Excel.Range = objHojaExcel.Range("A3", 
+Type.Missing)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda.Value = "Categoría"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda = objHojaExcel.Range("B3", Type.Missing)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda.Value = "Código"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda = objHojaExcel.Range("C3", Type.Missing)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda.Value = "Nombre"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda = objHojaExcel.Range("D3", Type.Missing)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objCelda.Value = "Precio RD$"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objCelda.EntireColumn.NumberFormat = "###,###,###.00"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> i <span style="COLOR:blue">As</span>
+<span style="COLOR:blue">Integer</span> = 5</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> j <span style="COLOR:blue">As</span>
+<span style="COLOR:blue">Integer</span> = 5</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CategoryName = ""</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">For</span> <span style="COLOR:blue">Each</span> 
+objRow <span style="COLOR:blue">As</span> DataRow <span style="COLOR:blue">In</span> 
+objDataSet.Tables(0).Rows</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">''' Si Ya se ha impreso una categorías 
+y la próxima categorías </span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">''' es diferente a la categorías a 
+imprimir, imprimir los totales</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">If</span> CategoryName.Length &gt; 0
+<span style="COLOR:blue">AndAlso</span> CategoryName &lt;&gt; objRow.Item(0)
+<span style="COLOR:blue">Then</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, 1) = "Total Category " &amp; 
+CategoryName.Trim</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, 2) = "=count(D" &amp; (j + 2).ToString &amp; 
+":D" &amp; (i - 1).ToString &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, 3) = "Subtotal Precio:"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, 4) = "=sum(D" &amp; (j + 2).ToString &amp; 
+":D" &amp; (i - 1).ToString &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Range("A" &amp; i.ToString &amp; ":D" &amp; 
+i.ToString).Font.Bold 
+= <span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j = i</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i += 2</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">End</span> <span style="COLOR:blue">If</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR:green">'' Asignar la categoría impresa</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CategoryName = objRow.Item(0)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignar los valores de los 
+registros a las celdas</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, "A") = objRow.Item(0)
+<span style="COLOR:green">'CategoryName'</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, "B") = objRow.Item(1)
+<span style="COLOR:green">'ProductID'</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, "C") = objRow.Item(2)
+<span style="COLOR:green">'ProductName'</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ objHojaExcel.Cells(i, "D") = objRow.Item(3)
+<span style="COLOR:green">'UnitPrice'</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:green;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Avanzamos una fila</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i += 1</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Next</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'* El Ultimo subtotal</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Cells(i, "A") = "Total Category " &amp; CategoryName.Trim</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Cells(i, "B") = "=count(D" &amp; (j + 2).ToString &amp; 
+":D" &amp; 
+(i - 1).ToString &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Cells(i, "C") = "Subtotal Precio:"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Cells(i, "D") = "=sum(D" &amp; (j + 2).ToString &amp; ":D" 
+&amp; (i 
+- 1).ToString &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  objHojaExcel.Range("A" &amp; i.ToString &amp; ":D" &amp; i.ToString).Font.Bold 
+  =
+        
+<span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Avanzamos una fila</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i += 1</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Seleccionar todo el bloque desde A1 
+hasta D #de filas</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objRango
+<span style="COLOR:blue">As</span> Excel.Range = objHojaExcel.Range("A3:D" &amp; (i 
+- 1).ToString)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Seleccionamos todo el rango 
+especificado</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.Select()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Ajustamos el ancho de las columnas al 
+ancho máximo del</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' contenido de sus celdas</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.Columns.AutoFit()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignar filtro por columna</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.AutoFilter(1, , VisibleDropDown:=<span style="COLOR:blue">True</span>)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignar un formato automático</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.AutoFormat(11, Alignment:=<span style="COLOR:blue">False</span>)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Seleccionamos el total general del 
+reporte y asignamos</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' font a negrita e itálica</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objRango = objHojaExcel.Range("A" &amp; i.ToString &amp; ":D" &amp; 
+i.ToString)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.Select()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.Font.Bold = <span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objRango.Font.Italic = <span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Crear un total general</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Cells(i, 1) = "Total "</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Cells(i, 2) = "=count(A3:D" &amp; (i - 1).ToString &amp; 
+")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel.Cells(i, 3) = "Total Precio:"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objHojaExcel.Cells(i, 4) = "=sum(A3:D" &amp; (i - 1).ToString &amp; ")"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Crear un grafico estadístico</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objExcelChart
+<span style="COLOR:blue">As</span> Excel.Chart</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> xlsSeries
+<span style="COLOR:blue">As</span> Excel.SeriesCollection</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> xlsAxisCategory, xlsAxisValue
+<span style="COLOR:blue">As</span> Excel.Axes</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Agregamos un nuevo grafico</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objExcelChart = objLibroExcel.Charts.Add</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Creamos un rango con los totales de 
+cada categorías para crear nuestro gráfico</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+objRango = 
+objHojaExcel.Range("=Sheet1!$D$17,Sheet1!$D$31,Sheet1!$D$46,Sheet1!$D$58,Sheet1!$D$67,Sheet1!$D$75,Sheet1!$D$82,Sheet1!$D$96")</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">With</span> objExcelChart</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignamos el tipo de grafico</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ .ChartType = Excel.XlChartType.xlColumnClustered</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignamos el total</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; .SetSourceData(objRango)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Seleccionamos los diferentes 
+elementos del grafico</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; xlsSeries = .SeriesCollection</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Desplegar los valores de cada 
+columna al top de cada columna</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ .ApplyDataLabels(Excel.XlDataLabelsType.xlDataLabelsShowValue)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'' Asignamos el nombre de cada serie</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(1).Name = objHojaExcel.Range("A17").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(2).Name = objHojaExcel.Range("A31").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(3).Name = objHojaExcel.Range("A46").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(4).Name = objHojaExcel.Range("A58").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(5).Name = objHojaExcel.Range("A67").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(6).Name = objHojaExcel.Range("A75").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(7).Name = objHojaExcel.Range("A82").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsSeries.Item(8).Name = objHojaExcel.Range("A96").Value</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsAxisCategory = .Axes(, Excel.XlAxisGroup.xlPrimary)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  xlsAxisCategory.Item(Excel.XlAxisType.xlCategory).HasTitle =
+  
+<span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+&nbsp;xlsAxisCategory.Item(Excel.XlAxisType.xlCategory).AxisTitle.Characters.Text
+ 
+= "Totales por categoría"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsAxisValue = .Axes(, Excel.XlAxisGroup.xlPrimary)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  xlsAxisValue.Item(Excel.XlAxisType.xlValue).HasTitle =
+  
+<span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsAxisValue.Item(Excel.XlAxisType.xlValue).AxisTitle.Characters.Text 
+= "Rango de Precios"</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ xlsAxisValue.Item(Excel.XlAxisType.xlValue).AxisTitle.Orientation 
+= Excel.XlOrientation.xlVertical</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+  xlsAxisValue.Item(Excel.XlAxisType.xlValue).HasMajorGridlines =
+  
+<span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">End</span> <span style="COLOR:blue">With</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; System.Threading.Thread.CurrentThread.CurrentCulture = 
+OldCultureInfo</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objLibroExcel.PrintPreview()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objHojaExcel = <span style="COLOR:blue">Nothing</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objLibroExcel = <span style="COLOR:blue">Nothing</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Catch</span> ex <span style="COLOR:blue">As</span> 
+Exception</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(ex.Message)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">End</span> <span style="COLOR:blue">Try</span></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Ahora podemos ejecutar nuestro 
+programa y obtendremos el siguiente resultado:</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">&nbsp;<img alt="" src="ELMoreno_ExcelReports%20Archivos/ElMoreno_Chart.png" height="390" width="580"></span><span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Vamos a crear un segundo 
+ejemplo de cómo leer un archivo Excel como base&nbsp; de datos, mediante OLEDB 
+podemos tratar los archivos Excel como si fueran base datos igualando el archivo 
+como una base de datos, las hojas (Sheets) como tablas y las columnas como 
+campos y las filas como registros Ej.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Archivo XLS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+= Base de datos</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Sheets &nbsp;&nbsp;&nbsp;&nbsp; = 
+Tablas</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Column &nbsp;&nbsp;&nbsp;&nbsp; = 
+Columnas (para nombrar las columnas toma la primera línea del archivo)</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Cell &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 
+valor de una colunma en un registro</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Row &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = 
+Registro</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">En nuestro ejemplo vamos a 
+crear una forma que nos pedirá el nombre y la localización del archivo Excel que 
+queremos leer, luego haremos clic en un botón y se desplegara el contenido del 
+archivo en un grid y agregaremos otro botón para abrir este mismo archivo en 
+EXCEL.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Iniciando, nuestra forma se 
+vera de la siguiente forma:</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">
+					<img alt="" src="ELMoreno_ExcelReports%20Archivos/ElMoreno_ReadExcel.png"></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">El botón &#8220;Leer Archivo&#8221;leera 
+el archivo Excel y desplegara su contenido en el grid y el botón &#8220;Abrir 
+Excel&#8221;abrira una instancia de Excel con archivo especificado.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">código &#8230;</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Primero definiremos una 
+variable tipo EXCEL.Application a nivel del formulario</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:10pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Dim</span><span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO"> 
+m_Excel <span style="COLOR:blue">As</span> Excel.Application</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Iniciaremos codificando el 
+botón &#8220;Leer Archivo&#8221;, hacemos clic sobre el botón</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Definiremos 3 variables, la 
+primera de tipo Dataset para almacenar la información del archivo Excel, la 
+segunda de tipo OleDbDataAdapter para extraer la información del archivo Excel y 
+pasarlo al dataset y la 3ra. De tipo OleDbConnection para crear la conexión 
+entre el archivo Excel y la aplicación.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objDataSet
+<span style="COLOR:blue">As</span> System.Data.DataSet</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objDataAdapter
+<span style="COLOR:blue">As</span> System.Data.OleDb.OleDbDataAdapter</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objOleConnection
+<span style="COLOR:blue">As</span> System.Data.OleDb.OleDbConnection</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Ahora configuraremos la 
+conexión al archivo, los parámetros necesarios en la cadena de conexión son los 
+siguientes</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Provider &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = &#8220;</span><span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO">Microsoft.Jet.OLEDB.4.0&#8221;</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">DataSource &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; =&nbsp; 
+&lt;ruta y nombre del archivo&gt;</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Extended Properties &nbsp;&nbsp;&nbsp; = 
+Nombre de la aplicación y la versión Ej. &#8220;Extended Properties=Excel 8.0&#8221;</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'Creamos un objeto OLEDBConnection con el 
+nombre del archivo seleccionado</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">' </span></span>
+				<span style="FONT-SIZE:9pt;COLOR:green;FONT-FAMILY:'Courier New'" lang="ES-DO">
+como Data Source</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objOleConnection = <span style="COLOR:blue">New</span> 
+System.Data.OleDb.OleDbConnection( _</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ "provider=Microsoft.Jet.OLEDB.4.0; " &amp; _</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ "data source=" &amp; TextBox1.Text.Trim &amp; "; Extended 
+Properties=Excel 
+8.0;")</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Nuestra cadena de conexión en 
+el parámetro Data Source pasaremos el archivo especificado en el textbox.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Ahora configuraremos el 
+DataAdapter, una vez creada la conexión al archivo Excel las hojas del archivo 
+pueden ser tratados como tablas y aplicar sentencias SQL sobre estas hojas Ej.:</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Si queremos seleccionar 
+los registros que están en la hoja 1 utilizamos</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELECT * FROM [SHEET1$]</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Si queremos seleccionar 
+columnas especificas de una hoja utilizamos </span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SELECT * FROM [SHEET$1A1:D17]</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Entonces, configuramos nuestro 
+DataAdapter:</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'* Si queremos seleccionar toda la hoja 
+solo especificamos [Sheet1$]</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objDataAdapter = <span style="COLOR:blue">New</span> 
+System.Data.OleDb.OleDbDataAdapter( _</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ "select * from [Sheet1$]&nbsp; ", objOleConnection)</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Ahora instanciamos el Dataset 
+y lo llenamos </span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objDataSet = <span style="COLOR:blue">New</span> System.Data.DataSet</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objDataAdapter.Fill(objDataSet)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objOleConnection.Close()</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Asignaremos el nombre de la 
+tabla al titulo del grid, el dataset como datasource del grid y el nombre de la 
+tabla creada en el dataset como datamember y listo.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGrid1.CaptionText = objDataSet.Tables(0).TableName</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGrid1.DataSource = objDataSet</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGrid1.DataMember = objDataSet.Tables(0).TableName</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Ahora nuestra codificación 
+completa se vera así:</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;<span style="COLOR:blue">Try</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">If</span> TextBox1.Text.Length =   0
+<span style="COLOR:blue">Then</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Exit</span> <span style="COLOR:blue">
+Sub</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">End</span> <span style="COLOR:blue">If</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objDataSet
+<span style="COLOR:blue">As</span> System.Data.DataSet</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objDataAdapter
+<span style="COLOR:blue">As</span> System.Data.OleDb.OleDbDataAdapter</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Dim</span> objOleConnection
+<span style="COLOR:blue">As</span> System.Data.OleDb.OleDbConnection</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'Creamos un objeto OLEDBConnection con el 
+nombre del archivo seleccionado</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">' </span></span>
+				<span style="FONT-SIZE:9pt;COLOR:green;FONT-FAMILY:'Courier New'" lang="ES-DO">
+como Data Source</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objOleConnection = <span style="COLOR:blue">New</span> 
+System.Data.OleDb.OleDbConnection( _</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ "provider=Microsoft.Jet.OLEDB.4.0; " &amp; _</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ "data source=" &amp; TextBox1.Text.Trim &amp; "; Extended 
+Properties=Excel 
+8.0;")</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'Seleccionamos los datos que están en la 
+hoja 1 (Sheet1)</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'Cada columna se representara como una 
+columna y cada row</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR:green">'como un row</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:green;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'* Si queremos seleccionar un rango solo 
+especificamos [Sheet1$An:Bm]</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'* objDataAdapter = New 
+System.Data.OleDb.OleDbDataAdapter( _</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; "select * from [Sheet1$A6:E29]", 
+objOleConnection)</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:green;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="COLOR:green">'* Si queremos seleccionar toda la hoja 
+solo especificamos [Sheet1$]</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objDataAdapter = <span style="COLOR:blue">New</span> 
+System.Data.OleDb.OleDbDataAdapter( _</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ "select * from [Sheet1$]&nbsp; ", objOleConnection)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:green">'where [Sheet1$A4] = '</span></span><span style="FONT-SIZE:9pt;
+ COLOR:green;
+ FONT-FAMILY:'Courier New'" lang="ES-DO">Aruba</span><span style="FONT-SIZE:9pt;COLOR:green;FONT-FAMILY:'Courier New'" lang="ES-DO">'</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;COLOR:green;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">&nbsp; 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;objDataSet = <span style="COLOR:blue">New</span> System.Data.DataSet</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objDataAdapter.Fill(objDataSet)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; objOleConnection.Close()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGrid1.CaptionText = objDataSet.Tables(0).TableName</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGrid1.DataSource = objDataSet</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DataGrid1.DataMember = objDataSet.Tables(0).TableName</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">Catch</span> ex <span style="COLOR:blue">As</span> 
+Exception</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MessageBox.Show(ex.Message)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6; TEXT-ALIGN: justify">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">End</span> <span style="COLOR:blue">Try</span></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE:9pt;COLOR:blue;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Ahora codificaremos el botón 
+&#8220;Abrir EXCEL&#8221;, este botón es bastante sencillo, solo debemos instanciar la 
+variable tipo EXCEL.Application que definimos a nivel de formulario y ejecutar 
+el método Open de la propiedad Workbooks de la variable.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+				<span style="FONT-SIZE:10pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+m_Excel = <span style="COLOR:blue">New</span> Excel.Application</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m_Excel.Workbooks.Open(TextBox1.Text)</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m_Excel.Visible = <span style="COLOR:blue">True</span></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Agregamos el siguiente código 
+en el evento &#8220;Closing&#8221; del formulario para cuando cerremos el formulario 
+eliminar la instancia de Excel que este ejecutándose.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">If</span> <span style="COLOR:blue">Not</span> 
+m_Excel <span style="COLOR:blue">Is</span> <span style="COLOR:blue">Nothing</span>
+<span style="COLOR:blue">Then</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m_Excel.Quit()</span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; m_Excel = <span style="COLOR:blue">Nothing</span></span></p>
+			<p class="MsoNormal" style="BACKGROUND: #e6e6e6">
+				<span style="FONT-SIZE:9pt;FONT-FAMILY:'Courier New'" lang="ES-DO">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span style="COLOR:blue">End</span> <span style="COLOR:blue">If</span></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Ya podemos ejecutamos nuestra 
+aplicación y podemos probarla el resultado será parecido al siguiente:</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Aquí abrí un archivo llamado 
+Casa.XLS ubicado en mi My Documents folder hago clic en el botón Leer Archivo y 
+se desplega lo siguiente:</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">
+					<img alt="" src="ELMoreno_ExcelReports%20Archivos/ElMoreno_ReadExcel2.png"></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span>&nbsp;</p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Luego hago clic en el botón 
+&#8220;Abrir EXCEL&#8221;y el resultado es este:</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO"></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-SIZE: 9pt; FONT-FAMILY: Verdana" lang="ES-DO">
+					<img alt="" src="ELMoreno_ExcelReports%20Archivos/ElMoreno_Excel.png" height="460" width="652"></span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN:justify">
+				<span style="FONT-FAMILY: Verdana" lang="ES-DO">Como se puede notar el 
+programa tomo la primera línea de la hoja Excel como títulos de las columnas 
+esto lo hace automático el Provider.</span></p>
+			<p class="MsoNormal" style="TEXT-ALIGN: justify"><span style="FONT-FAMILY: Verdana" lang="ES-DO">Hasta aquí este articulo, espero que les sirva. 
+  Quiero agradecer a los lectores de mis artículos anteriores por escribirme y 
+  cualquiera que desee escribirme ya sea para fines de alguna pregunta o 
+  aclaración siéntance en la libertad de hacerlo estoy a sus 
+  servicios.</span></p>
+			<p><font face="Verdana" size="2"> Gracias mil ...
+					<br>
+				</font>
+			</p>
+		</blockquote>
+		<hr color="#000080" noshade="noshade" size="3" width="90%">
+<p align="center"><font face="Verdana" size="2"><a href="http://www.elguille.info/default.aspx">
+<img src="ELMoreno_ExcelReports%20Archivos/el_guille.jpg" alt="ir al índice" border="0" height="50" width="200"></a></font></p>
+<p><font face="Verdana" size="2">
+<b><a href="http://downloads.elguille.info/BajarZip.aspx?zip=ELMoreno_ExcelReports.zip&amp;seccion=/colabora/" target="_blank">Fichero con el código de ejemplo</a></b>, (ELMoreno_ExcelReports.zip 
+- 446 KB)</font></p><font face="Verdana" size="2">
+
+	
+
+
+</font></body></html>

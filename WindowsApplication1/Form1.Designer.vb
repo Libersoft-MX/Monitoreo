@@ -256,7 +256,7 @@ Partial Class Monitoreo
         Me.txtVehiculo.Name = "txtVehiculo"
         Me.txtVehiculo.Size = New System.Drawing.Size(588, 26)
         Me.txtVehiculo.TabIndex = 32
-        Me.txtVehiculo.Text = "VEHÍCULO: NISSAN NP300  PLACAS: VR-03-464  No. ECONÓMICO: I-14"
+        Me.txtVehiculo.Text = "VEHÍCULO: FORD F150  PLACAS: VS-32-156  No. ECONÓMICO: I-6"
         '
         'Label3
         '
@@ -276,7 +276,7 @@ Partial Class Monitoreo
         Me.txtNombreProyecto.Name = "txtNombreProyecto"
         Me.txtNombreProyecto.Size = New System.Drawing.Size(665, 26)
         Me.txtNombreProyecto.TabIndex = 29
-        Me.txtNombreProyecto.Text = "ESPECIALISTAS DE DISEÑO Y SUPERVISIÓN  DE MANTENIMIENTO DE POZOS"
+        Me.txtNombreProyecto.Text = "CORDINACIÓN OPERATIVA DE INTERVENCIONES A POZOS SIN EQUIPO"
         '
         'Label2
         '
@@ -392,7 +392,7 @@ Partial Class Monitoreo
         Me.txtTiempoSeparacion.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtTiempoSeparacion.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTiempoSeparacion.Location = New System.Drawing.Point(192, 257)
-        Me.txtTiempoSeparacion.MaxLength = 2
+        Me.txtTiempoSeparacion.MaxLength = 3
         Me.txtTiempoSeparacion.Name = "txtTiempoSeparacion"
         Me.txtTiempoSeparacion.Size = New System.Drawing.Size(38, 26)
         Me.txtTiempoSeparacion.TabIndex = 83
@@ -455,7 +455,7 @@ Partial Class Monitoreo
         Me.txtNumeroEstacionamientoI.Size = New System.Drawing.Size(38, 26)
         Me.txtNumeroEstacionamientoI.TabIndex = 5
         Me.txtNumeroEstacionamientoI.Tag = "9"
-        Me.txtNumeroEstacionamientoI.Text = "5"
+        Me.txtNumeroEstacionamientoI.Text = "4"
         '
         'Label17
         '
@@ -478,7 +478,7 @@ Partial Class Monitoreo
         Me.txtNumeroEstacionamientoF.Size = New System.Drawing.Size(38, 26)
         Me.txtNumeroEstacionamientoF.TabIndex = 76
         Me.txtNumeroEstacionamientoF.Tag = "12"
-        Me.txtNumeroEstacionamientoF.Text = "6"
+        Me.txtNumeroEstacionamientoF.Text = "5"
         '
         'Label19
         '
@@ -497,7 +497,7 @@ Partial Class Monitoreo
         Me.txtTiempoEstacionamientoI.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtTiempoEstacionamientoI.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTiempoEstacionamientoI.Location = New System.Drawing.Point(129, 147)
-        Me.txtTiempoEstacionamientoI.MaxLength = 2
+        Me.txtTiempoEstacionamientoI.MaxLength = 3
         Me.txtTiempoEstacionamientoI.Name = "txtTiempoEstacionamientoI"
         Me.txtTiempoEstacionamientoI.Size = New System.Drawing.Size(38, 26)
         Me.txtTiempoEstacionamientoI.TabIndex = 74
@@ -519,7 +519,7 @@ Partial Class Monitoreo
         Me.txtTiempoEstacionamientoF.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.txtTiempoEstacionamientoF.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtTiempoEstacionamientoF.Location = New System.Drawing.Point(226, 147)
-        Me.txtTiempoEstacionamientoF.MaxLength = 2
+        Me.txtTiempoEstacionamientoF.MaxLength = 3
         Me.txtTiempoEstacionamientoF.Name = "txtTiempoEstacionamientoF"
         Me.txtTiempoEstacionamientoF.Size = New System.Drawing.Size(38, 26)
         Me.txtTiempoEstacionamientoF.TabIndex = 68
@@ -602,7 +602,7 @@ Partial Class Monitoreo
         Me.txtHF2.Name = "txtHF2"
         Me.txtHF2.Size = New System.Drawing.Size(38, 26)
         Me.txtHF2.TabIndex = 60
-        Me.txtHF2.Text = "07"
+        Me.txtHF2.Text = "08"
         '
         'Label14
         '
@@ -702,7 +702,7 @@ Partial Class Monitoreo
         Me.txtMI2.Name = "txtMI2"
         Me.txtMI2.Size = New System.Drawing.Size(38, 26)
         Me.txtMI2.TabIndex = 43
-        Me.txtMI2.Text = "00"
+        Me.txtMI2.Text = "06"
         '
         'txtHI2
         '
@@ -713,7 +713,7 @@ Partial Class Monitoreo
         Me.txtHI2.Name = "txtHI2"
         Me.txtHI2.Size = New System.Drawing.Size(38, 26)
         Me.txtHI2.TabIndex = 42
-        Me.txtHI2.Text = "09"
+        Me.txtHI2.Text = "08"
         '
         'Label9
         '
@@ -735,7 +735,7 @@ Partial Class Monitoreo
         Me.txtMI1.Name = "txtMI1"
         Me.txtMI1.Size = New System.Drawing.Size(38, 26)
         Me.txtMI1.TabIndex = 40
-        Me.txtMI1.Text = "00"
+        Me.txtMI1.Text = "46"
         '
         'txtHI1
         '
@@ -746,7 +746,7 @@ Partial Class Monitoreo
         Me.txtHI1.Name = "txtHI1"
         Me.txtHI1.Size = New System.Drawing.Size(38, 26)
         Me.txtHI1.TabIndex = 39
-        Me.txtHI1.Text = "07"
+        Me.txtHI1.Text = "06"
         '
         'Label1
         '
@@ -772,7 +772,7 @@ Partial Class Monitoreo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 18.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1134, 681)
+        Me.ClientSize = New System.Drawing.Size(892, 681)
         Me.Controls.Add(Me.Prueba)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)

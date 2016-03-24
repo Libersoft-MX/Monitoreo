@@ -648,6 +648,9 @@ Public Class Monitoreo
         Hoja.Range("A8:G8").Merge()
         Hoja.Range("E9:G9").Merge()
 
+        Hoja.Range("B5:D5").Merge()
+        Hoja.Range("A6:C6").Merge()
+
         Hoja.Range("A1:G9").Borders(2).LineStyle = 1 'Todas las lineas verticales
         Hoja.Range("A1:A10").Borders(1).LineStyle = 1 'Todas las lineas verticales
         Hoja.Range("A1:G9").Borders(4).LineStyle = 1 'Todas las lineas horizontales
@@ -704,6 +707,8 @@ Public Class Monitoreo
         Hoja.Range("D9").HorizontalAlignment = Constants.xlCenter    'Alineación
         Hoja.Range("E9").HorizontalAlignment = Constants.xlCenter    'Alineación
 
+        Hoja.Range("B5").HorizontalAlignment = Constants.xlCenter    'Alineación
+        Hoja.Range("A6").HorizontalAlignment = Constants.xlCenter    'Alineación
 
         Hoja.Range("A2").VerticalAlignment = Constants.xlCenter 'Alineación
         Hoja.Range("A3").VerticalAlignment = Constants.xlCenter 'Alineación
